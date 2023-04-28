@@ -28,3 +28,7 @@ def register(request):
         user_form = UserRegistrationForm()
     
     return  render(request, 'registration/register.html', {'user_form': user_form})
+
+
+def book_appointment(request):
+    return render(request, 'registration/book_appointment.html' )

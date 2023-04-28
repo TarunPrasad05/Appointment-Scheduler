@@ -23,6 +23,9 @@
                     <a href="{% url 'dashboard' %}">My Dashboard</a>
                 </li>
                 <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
+                    <a href="{% url 'book_appointment' %}">Book an Appointment</a>
+                </li>
+                <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
                     <a href="{% url 'password_change' %}">Change your password</a>
                 </li>
                 <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
