@@ -7,7 +7,7 @@
     {% for u in allusers %}
     <div class="users">
         <p> {{ u.username }} </p>
-        <p> {{ u.fisr_name }}</p>
+        <p> {{ u.first_name }}</p>
         <p>{{ u.last_name }}</p>
         <p>{{ u.email }}</p>
         <a href="{% url 'dashboard' %}">Book</a>

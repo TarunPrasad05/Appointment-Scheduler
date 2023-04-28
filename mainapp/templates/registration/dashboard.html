@@ -4,5 +4,20 @@
 {% block content %}
  <h1> Dashboard </h1>
  <p> Welcome to your page  </p>
+ {% if appointments.count > 0 %}
+<div >
+    <h1 >Appointments:</h1>
+    <div >
+        {% for appointment in appointments %}
+        <div >
+            <p>From: {{ appointment.user }}</p>
+            <p>Day: {{ appointment.day }}</p>
+            <p >Time: {{ appointment.time }}</p>
+            <p >To: {{ appointment.user2 }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 
 {% endblock %}
