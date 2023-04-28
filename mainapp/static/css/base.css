@@ -41,9 +41,9 @@ ol {
 
 #header {
     padding: 10px 100px;
-    font-size: 20px;
-    background: #026efd;
-    color: #fff;
+    font-size: 200px;
+    background: red;
+    color: red;
     border-bottom: 10px solid #026efd;
     overflow: auto;
 }
@@ -60,7 +60,7 @@ ol {
 
 
 #header ul.menu {
-    list-style: none;
+    
     float: left;
     margin-left: 15%;
     margin-top: 2%;
@@ -79,7 +79,7 @@ ol {
 
 
 #header a {
-    color: #f3f7cc;
+    color: red;
 }
 
 #header a:hover {
@@ -91,11 +91,20 @@ ol {
     padding-top: 4px;
 }
 
+.heading {
+    background-color: #cc0033;
+}
+
+div {
+    background-color: red;
+}
+
 
 
 /* CSS for content */
-#context {
-    padding: 30px 100px;
+#content {
+    padding: 100px 100px;
+    background-color: red;
 }
 
 
