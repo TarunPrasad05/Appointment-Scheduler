@@ -40,7 +40,7 @@ ol {
 /* CSS for header */
 
 #header {
-    padding: 10px 100px;
+    padding: 5px 3%;
     font-size: 20px;
     background: #026efd;
     color: #fff;
@@ -48,29 +48,16 @@ ol {
     overflow: auto;
 }
 
-#header .logo {
-    font-family: 'Muli', sans-serif;
-    float: left;
-    color: #f3f7cc;
-    font-size: 28px;
-    margin-left: 40%;
-    font-weight: bolder;
-    margin-top: 2%;
-}
-
 
 #header ul.menu {
+    color: #f3f7cc;
     list-style: none;
-    float: left;
-    margin-left: 15%;
-    margin-top: 2%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-around;
 }
 
 
-#header ul.menu li {
-    float: left;
-    padding: 4px 10px;
-}
 
 #header ul.menu li.selected a, #header ul.menu li.selected a:hover {
     color: #026efd;
@@ -86,16 +73,10 @@ ol {
     color: #fff;
 }
 
-#header .user {
-    float: right;
-    padding-top: 4px;
-}
-
-
 
 /* CSS for content */
-#content {
-    padding: 30px 100px;
+.content {
+    padding: 5% 3%;
 }
 
 

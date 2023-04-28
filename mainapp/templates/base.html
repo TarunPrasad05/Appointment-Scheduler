@@ -13,14 +13,20 @@
     <body>
         
         <div id="header" class="heading">
-            <span class="logo">
-               <center>  <img src="{% static 'images/logo.png' %}" width="30%"> </center>
-            </span>
            
             {% if request.user.is_authenticated %}
             <ul class="menu">
                 <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
+                    Hello, {{ request.user.username }}
+                </li>
+                <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
                     <a href="{% url 'dashboard' %}">My Dashboard</a>
+                </li>
+                <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
+                    <a href="{% url 'password_change' %}">Change your password</a>
+                </li>
+                <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
+                    <a href="{% url 'logout' %}">Logout</a>
                 </li>
             </ul>
             {% endif %}
