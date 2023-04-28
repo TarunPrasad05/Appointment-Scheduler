@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %} 
+            {% endblock %}
+        </title>
+        <link href="{% static 'css\base1.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="header" class="heading">
+            <span class="logo">
+               <center>  <img src="{% static 'images/logo.png' %}" width="30%"> </center>
+            </span>
+           
+            {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
+                    <a href="{% url 'dashboard' %}">My Dashboard</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+        <div class="content" id="login_page">
+            {% block content%}
+            {% endblock %}
+        </div>
+    </body>
+</html>

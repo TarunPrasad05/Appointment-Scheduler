@@ -12,12 +12,12 @@ p {
 
 
 a {
-    color: blue;
+    color: #026efd;
     text-decoration: none;
 }
 
 a:hover {
-    color: green;
+    color: #026efd;
 }
 
 
@@ -41,9 +41,9 @@ ol {
 
 #header {
     padding: 10px 100px;
-    font-size: 200px;
-    background: red;
-    color: red;
+    font-size: 20px;
+    background: #026efd;
+    color: #fff;
     border-bottom: 10px solid #026efd;
     overflow: auto;
 }
@@ -60,7 +60,7 @@ ol {
 
 
 #header ul.menu {
-    
+    list-style: none;
     float: left;
     margin-left: 15%;
     margin-top: 2%;
@@ -79,7 +79,7 @@ ol {
 
 
 #header a {
-    color: red;
+    color: #f3f7cc;
 }
 
 #header a:hover {
@@ -91,20 +91,11 @@ ol {
     padding-top: 4px;
 }
 
-.heading {
-    background-color: #cc0033;
-}
-
-div {
-    background-color: red;
-}
-
 
 
 /* CSS for content */
 #content {
-    padding: 100px 100px;
-    background-color: red;
+    padding: 30px 100px;
 }
 
 
@@ -222,7 +213,6 @@ ul.messages li a.close {
 .login-form {
     float: left;
 }
-
 
 
 

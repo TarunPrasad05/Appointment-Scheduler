@@ -11,10 +11,12 @@
         <link href="{% static 'css\base.css' %}" rel="stylesheet">
     </head>
     <body>
+        
         <div id="header" class="heading">
             <span class="logo">
-                NYBULA
+               <center>  <img src="{% static 'images/logo.png' %}" width="30%"> </center>
             </span>
+           
             {% if request.user.is_authenticated %}
             <ul class="menu">
                 <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>
@@ -23,7 +25,7 @@
             </ul>
             {% endif %}
         </div>
-        <div id="content">
+        <div class="content" id="login_page">
             {% block content%}
             {% endblock %}
         </div>
