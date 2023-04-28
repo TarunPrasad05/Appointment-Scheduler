@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Book an Appointment {% endblock %}
+
+{% block content %}
+ <h1> Book an Appointment </h1>
+ <div class="userhead">
+    {% for u in allusers %}
+    <div class="users">
+        <p> {{ u.username }} </p>
+        <p> {{ u.fisr_name }}</p>
+        <p>{{ u.last_name }}</p>
+        <p>{{ u.email }}</p>
+        <a href="{% url 'dashboard' %}">Book</a>
+    </div>
+    {% endfor %}
+ </div>
+{% endblock %}

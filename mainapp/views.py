@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 
@@ -31,4 +32,11 @@ def register(request):
 
 
 def book_appointment(request):
-    return render(request, 'registration/book_appointment.html' )
+    
+    all_users= get_user_model().objects.all()
+    all_users = all_users.exclude(username=request.user.username)
+
+    
+    context= {'allusers': all_users}
+
+    return render(request, 'registration/book_appointment.html', context )
