@@ -9,11 +9,13 @@
     <h1 >Appointments:</h1>
     <div >
         {% for appointment in appointments %}
-        <div >
+        <div id="appbar">
             <p>From: {{ appointment.user }}</p>
             <p>Day: {{ appointment.day }}</p>
             <p >Time: {{ appointment.time }}</p>
             <p >To: {{ appointment.user2 }}</p>
+            <p >Title: {{ appointment.title }}</p>
+            <p >Agenda: {{ appointment.agenda }}</p>
         </div>
         {% endfor %}
     </div>

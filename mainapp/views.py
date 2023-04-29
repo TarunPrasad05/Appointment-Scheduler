@@ -19,7 +19,6 @@ def dashboard(request):   #main screen
     return render(request, 'registration/dashboard.html', {
         'section': 'dashboard',
         'user':user,
-        ''
         'appointments':appointment,
     } )
 
@@ -96,6 +95,8 @@ def bookingSubmit(request):
     hour = checkTime(times, day)
     if request.method == 'POST':
         time = request.POST.get("time")
+        title = request.POST.get("title")
+        agenda = request.POST.get("agenda")
         date = dayToWeekday(day)
         if time == None:
             messages.success(request, "Please Select A Time!")
@@ -111,6 +112,8 @@ def bookingSubmit(request):
                                 user2 = user2,
                                 day = day,
                                 time = time,
+                                title = title,
+                                agenda = agenda,
                             )
                             messages.success(request, "Appointment Saved!")
                             return redirect('booking')

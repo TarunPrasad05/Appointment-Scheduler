@@ -20,7 +20,9 @@ class Appointment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     user2 = models.CharField(User, null=True, max_length=30)
     day = models.DateField(default=datetime.now)
-    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="3 PM")
+    title = models.CharField(max_length=20, default="No Title")
+    agenda = models.CharField(max_length=100, default="No Agenda")
+    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="10 AM")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
     def __str__(self):
         return f"{self.user.username} | day: {self.day} | time: {self.time}"

@@ -225,3 +225,13 @@ ul.messages li a.close {
     margin-left: 45%;
     margin-top: 20%;
 }
+
+
+/*for title and agenda */
+
+
+/* Appointment view */
+
+#appbar {
+    background-color: #0ac33e;
+}
