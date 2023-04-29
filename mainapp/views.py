@@ -61,6 +61,9 @@ def booking(request):
         if service == None:
             messages.success(request, "Please Select A Terraformer!")
             return redirect('booking')
+        if day == None:
+            messages.success(request, "Please Select A Day!")
+            return redirect('booking')
 
         #Store day and service in django session:
         request.session['day'] = day
@@ -94,6 +97,9 @@ def bookingSubmit(request):
     if request.method == 'POST':
         time = request.POST.get("time")
         date = dayToWeekday(day)
+        if time == None:
+            messages.success(request, "Please Select A Time!")
+            return redirect('bookingSubmit')
 
         if user2 != None:
             if day <= maxDate and day >= minDate:
