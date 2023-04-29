@@ -4,13 +4,11 @@
 {% block body %}
 
 
-
-
 {% if user.is_authenticated %}
 <h1>Schedule</h1>
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black text-center m-5">
-    <form method="post" action="{% url 'bookingSubmit' %}" class="me-2 ms-2" required>
+    <form method="post" action="{% url 'bookingSubmit' %}" class="me-2 ms-2" id="bookingconf" required>
         {% csrf_token %}
         
         <!--input time-->
@@ -23,10 +21,10 @@
                 {% endfor %}
             </select>
         </div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title"><br>
-        <label for="agenda">Agenda:</label><br>
-        <input type="text" id="agenda" name="agenda">
+        <h3 for="title" class="text-center fPersian mt-4" style="float: left;">Title:</h3><br>
+        <input type="text" id="title" name="title" class="fs-3 text-center" placeholder="No Title" ><br>
+        <h3 for="agenda" class="text-center fPersian mt-4" style="float: left;">Agenda:</h3><br>
+        <input type="text" id="agenda" name="agenda" class="fs-3 text-center" placeholder="No Agenda">
 
         <button type="submit" class="btn btn-primary text-white mt-3 fPersian">Submit</button>
 

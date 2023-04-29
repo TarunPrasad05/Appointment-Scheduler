@@ -228,7 +228,18 @@ ul.messages li a.close {
 
 
 /*for title and agenda */
+#title, #agenda {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .375rem;
+    margin-left: -0.3px;
 
+}
+
+#bookingconf {
+    overflow: hidden;
+}
 
 /* Appointment view */
 
