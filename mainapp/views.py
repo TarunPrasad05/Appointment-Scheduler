@@ -7,6 +7,11 @@ from datetime import datetime, timedelta
 from .models import *
 from django.contrib import messages
 
+from mainapp.forms import (
+    EditProfileForm
+)
+
+
 # Create your views here.
 
 
@@ -165,4 +170,16 @@ def checkTime(times, day):
         if Appointment.objects.filter(day=day, time=k).count() < 1:
             x.append(k)
     return x
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('edit_profile')
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'registration/edit_profile.html', args)
 

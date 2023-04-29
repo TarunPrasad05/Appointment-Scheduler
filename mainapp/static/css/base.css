@@ -244,6 +244,7 @@ ul.messages li a.close {
 /* Appointment view */
 
 .appointment-box {
+    line-height: 1.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
