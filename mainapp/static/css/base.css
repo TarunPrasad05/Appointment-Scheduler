@@ -12,12 +12,16 @@ p {
 
 
 a {
-    color: #026efd;
     text-decoration: none;
 }
 
+form a {
+    color: #333;
+    text-decoration: underline;
+}
+
 a:hover {
-    color: #026efd;
+    color: black;
 }
 
 
@@ -40,17 +44,17 @@ ol {
 /* CSS for header */
 
 #header {
-    padding: 10px 3%;
+    padding: 15px 3%;
     font-size: 20px;
-    background: #026efd;
-    color: #fff;
-    border-bottom: 10px solid #026efd;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
     overflow: auto;
 }
 
 
 #header ul.menu {
-    color: #f3f7cc;
     list-style: none;
     padding-right: 10%;
     display: flex;
@@ -59,18 +63,12 @@ ol {
 
 
 
-#header ul.menu li.selected a, #header ul.menu li.selected a:hover {
-    color: #026efd;
-    font-weight: bold;
-}
-
-
 #header a {
-    color: #f3f7cc;
+    color: white;
 }
 
 #header a:hover {
-    color: #fff;
+    text-decoration: underline;
 }
 
 
@@ -82,8 +80,19 @@ ol {
 
 /* forms */
 
+.formcont {
+    border: 3px solid #ccc;
+    justify-content: center;
+    display: flex;
+    padding: 2% 1%;
+    width: 60%;
+    margin-left: 20%;
+
+}
+
 form {
     overflow: auto;
+    font-size: 20px;
 }
 
 form p {
@@ -102,18 +111,22 @@ input, textarea {
     clear: both;
     margin: 0 15px 10px;
     background: #efefef;
-    border: 0;
+    border: 1px solid #ccc;
+    border-radius: 2%;
     padding: 6px 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 input[type=submit], a.button {
     font-weight: bold;
-    background: #026efd;
-    color: #fff;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
     padding: 10px 20px;
     font-size: 14px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 
@@ -218,7 +231,7 @@ ul.messages li a.close {
 
 .users a {
     background-color: white;
-    color: #026efd;
+    color: #333;
     padding: 3%;
     border-radius: 30%;
     align-self: center;
@@ -243,47 +256,78 @@ ul.messages li a.close {
 
 /* Appointment view */
 
+.appcont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-gap: 20px;
+}
+
+
 .appointment-box {
-    line-height: 1.5em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .appointment-time {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 20px;
-  }
-  
-  .appointment-date {
+line-height: 1.5em;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 10px;
+padding-left: 10%;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.appointment-time {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-right: 20px;
+border-right: 3px solid #ccc;
+padding-right: 5%;
+}
+
+.appointment-date {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.appointment-details {
+flex-grow: 1;
+}
+
+.appointment-title {
     font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .appointment-details {
-    flex-grow: 1;
-  }
-  
-  .appointment-title {
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.appointment-agenda {
     font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .appointment-agenda {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  
-  .appointment-guest {
-    font-size: 14px;
-    font-style: italic;
-  }
-  
+margin-bottom: 5px;
+}
+
+.appointment-guest {
+    font-size: 15px;
+    font-weight: 150;
+}
+
+
+.appointments-container {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.appointments-count {
+font-size: 72px;
+font-weight: bold;
+color: #787676;
+margin-bottom: 10px;
+}
+
+.appointments-text {
+font-size: 24px;
+text-align: center;
+color: #333;
+}

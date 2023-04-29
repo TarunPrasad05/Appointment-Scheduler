@@ -11,9 +11,8 @@
         <link href="{% static 'css\base.css' %}" rel="stylesheet">
     </head>
     <body>
-        
+
         <div id="header" class="heading">
-           
             {% if request.user.is_authenticated %}
             <ul class="menu">
                 <li {% if sectoin == "dashboard" %} class="selected" {% endif %}>

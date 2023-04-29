@@ -3,7 +3,12 @@
 
 {% block content %}
  <h1> Dashboard </h1>
- <p> Welcome to your page  </p>
+ <div class="appointments-container">
+  <div class="appointments-count">{{ appointments.count }}</div>
+  <div class="appointments-text">Upcoming Appointments</div>
+ </div>
+
+ 
  {% if appointments.count > 0 %}
 <div >
     <h1 >Appointments:</h1>
@@ -17,7 +22,7 @@
             <div class="appointment-details">
               <div class="appointment-title">{{ appointment.title }}</div>
               <div class="appointment-agenda">{{ appointment.agenda }}</div>
-              <div class="appointment-guest">Guest: {{ appointment.user2 }}</div>
+              <div class="appointment-guest">Scheduled between: {{appointment.user}} and {{ appointment.user2 }}</div>
             </div>
           </div>
         {% endfor %}

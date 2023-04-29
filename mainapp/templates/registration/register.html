@@ -9,9 +9,12 @@
     <p>
         Please, sign up using the form :
     </p>
-    <form method="post">
-        {{ user_form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
-    </form>
+    <div class="formcont">
+        <form method="post">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Create my account"></p>
+        </form>
+    </div>
+
 {% endblock %}

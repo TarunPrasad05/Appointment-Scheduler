@@ -21,6 +21,7 @@ def dashboard(request):   #main screen
     appointments = Appointment.objects.filter(user=user ).order_by('day', 'time')
     appointments2 = Appointment.objects.filter(user2=user ).order_by('day', 'time')
     appointment = appointments | appointments2
+    
     return render(request, 'registration/dashboard.html', {
         'section': 'dashboard',
         'user':user,
