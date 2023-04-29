@@ -243,6 +243,46 @@ ul.messages li a.close {
 
 /* Appointment view */
 
-#appbar {
-    background-color: #0ac33e;
-}
+.appointment-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .appointment-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+  }
+  
+  .appointment-date {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .appointment-details {
+    flex-grow: 1;
+  }
+  
+  .appointment-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .appointment-agenda {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .appointment-guest {
+    font-size: 14px;
+    font-style: italic;
+  }
+  

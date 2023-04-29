@@ -46,7 +46,7 @@ def register(request):
 
 def booking(request):
     #Calling 'validWeekday' Function to Loop days you want in the next 21 days:
-    weekdays = validWeekday(22)
+    weekdays = validWeekday(7)
 
     #Only show the days that are not full:
     validateWeekdays = isWeekdayValid(weekdays)
@@ -80,7 +80,7 @@ def booking(request):
 def bookingSubmit(request):
     user = request.user
     times = [
-        "10 AM","11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"
+        "10 AM","11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM"
     ]
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')
