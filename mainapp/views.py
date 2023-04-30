@@ -18,7 +18,6 @@ from mainapp.forms import (
 @login_required
 def dashboard(request):   #main screen
     user = request.user
-    print(user)
     appointments = Appointment.objects.filter(user=user ).order_by('day', 'time')
     appointments2 = Appointment.objects.filter(user2=user ).order_by('day', 'time')
     appointment = appointments | appointments2
@@ -41,13 +40,13 @@ def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
-            #create new user but avoid saving
+
             new_user = user_form.save(commit=False)
-            #set the password
+
             new_user.set_password(
                 user_form.cleaned_data['password']
             )
-            #save user
+
             new_user.save()
             return render(request, 'registration/register_done.html', {'new_user': new_user})
     else:
@@ -56,13 +55,9 @@ def register(request):
 
 
 
-#new
-
 def booking(request):
-    #Calling 'validWeekday' Function to Loop days you want in the next 21 days:
-    weekdays = validWeekday(7)
 
-    #Only show the days that are not full:
+    weekdays = validWeekday(7)
     validateWeekdays = isWeekdayValid(weekdays)
 
     all_users= get_user_model().objects.all()
@@ -78,7 +73,6 @@ def booking(request):
             messages.success(request, "Please Select A Day!")
             return redirect('booking')
 
-        #Store day and service in django session:
         request.session['day'] = day
         request.session['user2'] = service
 
@@ -102,10 +96,9 @@ def bookingSubmit(request):
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     maxDate = strdeltatime
 
-    #Get stored data from django session:
     day = request.session.get('day')
     user2 = request.session.get('user2')
-    #Only show the time of the day that has not been selected before:
+
     hour = checkTime(times, day)
     if request.method == 'POST':
         time = request.POST.get("time")
@@ -154,7 +147,7 @@ def dayToWeekday(x):
     return y
 
 def validWeekday(days):
-    #Loop days you want in the next 21 days:
+
     today = datetime.now()
     weekdays = []
     for i in range (0, days):
@@ -173,7 +166,7 @@ def isWeekdayValid(x):
     return validateWeekdays
 
 def checkTime(times, day):
-    #Only show the time of the day that has not been selected before:
+
     x = []
     for k in times:
         if Appointment.objects.filter(day=day, time=k).count() < 1:
@@ -191,14 +184,12 @@ def edit_profile(request):
         form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'registration/edit_profile.html', args)
-    
+
 
 
 def offhour(request):
-    #Calling 'validWeekday' Function to Loop days you want in the next 21 days:
-    weekdays = validWeekday(7)
 
-    #Only show the days that are not full:
+    weekdays = validWeekday(7)
     validateWeekdays = isWeekdayValid(weekdays)
 
 
@@ -212,7 +203,6 @@ def offhour(request):
             messages.success(request, "Please Select A Day!")
             return redirect('offhour')
 
-        #Store day and service in django session:
         request.session['day'] = day
         request.session['user2'] = service.username
 
@@ -240,10 +230,9 @@ def offhourSubmit(request):
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     maxDate = strdeltatime
 
-    #Get stored data from django session:
     day = request.session.get('day')
     user2 = request.session.get('user2')
-    #Only show the time of the day that has not been selected before:
+
     hour = checkTime(times, day)
     if request.method == 'POST':
         time = request.POST.get("time")
