@@ -4,7 +4,8 @@
 {% block content %}
  <h1> Dashboard </h1>
  <div class="appointments-container">
-  <div class="appointments-count">{{ appointments.count }}</div>
+  <a href="{% url 'offhour' %}" class="button" style="margin-bottom: 1%;">Mark Off-Hours</a>
+  <div class="appointments-count"> {{ appointments.count }} </div>
   <div class="appointments-text">Upcoming Appointments</div>
  </div>
 
@@ -26,8 +27,26 @@
             </div>
           </div>
         {% endfor %}
+  </div>
+  {%endif%}
+  {% if appointments1.count > 0 %}
+    <h1 >Off-Hours:</h1>
+    <div class="appcont">
+        {% for appointment in appointments1 %}
+          <div class="appointment-box">
+            <div class="appointment-time">
+              <div class="appointment-date">{{ appointment.day }}</div>
+              <div>{{ appointment.time }}</div>
+            </div>
+            <div class="appointment-details">
+              <div class="appointment-title">{{ appointment.title }}</div>
+              <div class="appointment-agenda">{{ appointment.agenda }}</div>
+            </div>
+          </div>
+
+        {% endfor %}
     </div>
+
 </div>
 {% endif %}
-
 {% endblock %}

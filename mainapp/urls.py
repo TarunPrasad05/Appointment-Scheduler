@@ -16,7 +16,11 @@ urlpatterns = [
     #user registration
     path('register/', views.register, name='register'),
 
-    #new
+    #boooking
     path('booking', views.booking, name='booking'),
     path('booking-submit', views.bookingSubmit, name='bookingSubmit'),
+
+    #off-hour
+    path('offhour', views.offhour, name='offhour'),
+    path('off-hour-submit', views.offhourSubmit, name='offhourSubmit'),
 ]

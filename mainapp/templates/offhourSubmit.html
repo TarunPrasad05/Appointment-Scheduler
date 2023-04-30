@@ -1,0 +1,37 @@
+<title>Mark Off-Hour</title>
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+
+
+{% if user.is_authenticated %}
+<h1>Off-Hour</h1>
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black text-center m-5">
+    <form method="post" action="{% url 'offhourSubmit' %}" class="me-2 ms-2" id="bookingconf" required>
+        {% csrf_token %}
+        
+        <!--input time-->
+        <h3 class="text-center fPersian mt-4" style="float: left;">Time:</h3>
+        <div>
+            <select class="form-select fs-3 text-center" name="time">
+                <option value="" selected disabled hidden>Select here</option>
+                {% for time in times %}
+                <option value="{{time}}">{{time}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <h3 for="title" class="text-center fPersian mt-4" style="float: left;">Title:</h3><br>
+        <input type="text" id="title" name="title" class="fs-3 text-center" placeholder="No Title" ><br>
+        <h3 for="agenda" class="text-center fPersian mt-4" style="float: left;">Agenda:</h3><br>
+        <input type="text" id="agenda" name="agenda" class="fs-3 text-center" placeholder="No Agenda">
+
+        <input type="submit" value="Submit" >
+
+    </form>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
