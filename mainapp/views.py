@@ -88,7 +88,7 @@ def booking(request):
 def bookingSubmit(request):
     user = request.user
     times = [
-        "10 AM","11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM"
+        "10 AM - 11 AM","11 AM - 12 PM", "12 PM - 1 PM", "1 PM - 2 PM", "2 PM - 3 PM", "3 PM - 4 PM", "4 PM - 5 PM"
     ]
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')
@@ -222,7 +222,7 @@ def offhour(request):
 def offhourSubmit(request):
     user = request.user
     times = [
-        "10 AM","11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM"
+        "10 AM - 11 AM","11 AM - 12 PM", "12 PM - 1 PM", "1 PM - 2 PM", "2 PM - 3 PM", "3 PM - 4 PM", "4 PM - 5 PM"
     ]
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')

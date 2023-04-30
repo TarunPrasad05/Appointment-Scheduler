@@ -30,7 +30,7 @@ This is a web application that allows terraformers to schedule appointments with
 
 - For the Terraformers app, I decided to use the Django framework due to its robustness, security, and scalability. I also used HTML/CSS for front-end styling.
 
-- In terms of the database schema, I created models for the terraformers, appointments. 
+- In terms of the database schema, I created models for the terraformers, appointments.
 
 - Terraformers have a one-to-many relationship with appointments (as they can schedule multiple appointments).
 
@@ -49,6 +49,13 @@ This is a web application that allows terraformers to schedule appointments with
 - This application was built without any knowledge on how hosting works and I wish to learn more about it now.
 
 - This application uses Django because of its built-in security features and other feautures present in it, other back-end frameworks could have been used to make it more robust and ready for actual use.
+
+- This application doesnt use dynamic reloading/rendering thus, every new changes must be reloaded to display the changes.
+
+
+## POSTMAN
+
+- This Django project does not use any REST APIs and therefore, it doesn't have a Postman collection. This project primarily renders HTML files including its Query Sets and serves them through Django's built-in view/render functions.
 
 ## Getting Started
 - Clone the repository.
