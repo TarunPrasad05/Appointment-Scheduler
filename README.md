@@ -13,7 +13,7 @@ This is a web application that allows terraformers to schedule appointments with
 - Update profile name and password
 - Mark off-hours on profile page
 
-## Future Features 
+## Future Features
 
 - Edit Appointments
 - Give proper time slots for scheduling
