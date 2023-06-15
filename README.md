@@ -1,5 +1,5 @@
 
-# Nbyula_Assignment1_SDE
+# Appointment Scheduler
 
 This is a web application that allows terraformers to schedule appointments with each other, update their profiles, and see their respective upcoming appointments. The application is built using Django.
 
